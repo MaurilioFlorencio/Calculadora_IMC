@@ -4,7 +4,7 @@ div.style.display = "flex"
 div.style.flexDirection = "column";
 div.style.height = "800px";
 div.style.width = "50%";
-div.style.backgroundColor = "lightgreen";
+div.style.backgroundColor = "whitesmoke";
 div.style.margin = "0 5%";
 div.style.alignItems = "center";
 document.body.appendChild(div);
@@ -88,24 +88,46 @@ botao.onmouseout = function(){
     botao.style.backgroundColor = "LightSeaGreen"
 }
 div.appendChild(botao);
-//Calculando o IMC
-const imc = input3.value/(input4.value*input4.value);
-if(imc < 18.50){
-    const grau = "Magreza";
-} else if (imc >= 18.50 && imc < 25.00){
-    const grau = "Normal";
-} else if (imc >= 25.00 && imc < 30.00){
-    const grau = "Sobrepeso";
-} else if (imc >= 30.00 && imc < 40.00){
-    const grau = "Obesidade";
-} else if (imc >= 40.00){
-    const grau = "Obesidade Grave";
-}
+//Click
+let peso = 0.0;
+let altura = 0.0;
+let imc = 0;
+let color = null;
+let grau = null;
+let imcF = null;
+botao.addEventListener("click",function(){
+    peso = input3.value;
+    altura = input4.value;
+    //Calculando o IMC
+    imc = (peso/(altura*altura));
+    imcF = imc.toFixed(2);
+    if(imc < 18.50){
+        grau = "MAGREZA";
+        color = "blue";
+    } else if (imc >= 18.50 && imc < 25.00){
+        grau = "NORMAL";
+        color = "green";
+    } else if (imc >= 25.00 && imc < 30.00){
+        grau = "SOBREPESO";
+        color = "yellow";
+    } else if (imc >= 30.00 && imc < 40.00){
+        grau = "OBESIDADE";
+        color = "orange";
+    } else {
+        grau = "OBESIDADE GRAVE";
+        color = "red";
+    }
+    resultado.innerHTML = imcF;
+    resultado.style.color = color;
+    tipo.innerHTML = grau;
+    tipo.style.color = color;
+    div1.appendChild(resultado);
+    div1.appendChild(tipo);
+})
 //Container Resultado
 const div1 = document.createElement("div");
 div1.style.display = "flex";
 div1.style.flexDirection = "column";
-div1.style.backgroundColor = "white";
 div1.style.marginTop = "5%";
 div1.style.marginLeft = "30%";
 div1.style.height = "100px";
@@ -113,22 +135,16 @@ div1.style.width = "20%";
 div.appendChild(div1);
 //Resultado do IMC  
 const resultado = document.createElement("div");
-resultado.textContent = imc;
 resultado.style.fontSize = "50px";
 resultado.style.fontWeight = "bold";
-resultado.style.color = "Teal"
 resultado.style.justifyContent = "flex-end";
 resultado.style.display = "flex";
-resultado.style.backgroundColor = "red";
 resultado.style.width = "100%";
-resultado.style.height = "70%";
-div1.appendChild(resultado);
+resultado.style.height = "60%";
 //Resultado Grau
 const tipo = document.createElement("div"); 
-tipo.textContent = "GRAU";
 tipo.style.fontWeight = "bold";
 tipo.style.display = "flex";
 tipo.style.justifyContent = "flex-end";
 tipo.style.alignItems = "center";
-tipo.style.height = "100%";
-div1.appendChild(tipo);
+tipo.style.height = "40%";
