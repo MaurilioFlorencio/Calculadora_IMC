@@ -1,22 +1,29 @@
-//Container calculadora
+//Container Geral
+const div0 = document.createElement("div");
+div0.style.display = "flex"
+div0.style.flexDirection = "row";
+div0.style.width = "100%";
+document.body.appendChild(div0);
+//Container Calculadora
 const div = document.createElement("div");
 div.style.display = "flex"
 div.style.flexDirection = "column";
-div.style.height = "800px";
-div.style.width = "50%";
+div.style.width = "40%";
 div.style.backgroundColor = "whitesmoke";
-div.style.margin = "0 5%";
 div.style.alignItems = "center";
-document.body.appendChild(div);
+div.style.border = "solid 2px darkcyan";
+div.style.margin = "1% 0 1% 1%";
+div.style.borderRight = "none";
+div0.appendChild(div);
 //Titulo Calculando
 const calculando = document.createElement("h1");
-calculando.textContent = "Calculadora";
+calculando.innerHTML = "Calculadora IMC";
 calculando.style.paddingTop = "2%";
-calculando.style.color = "LightSeaGreen";
+calculando.style.color = "DarkCyan";
 div.appendChild(calculando);
 //Título Nome
 const nome = document.createElement("h3");
-nome.textContent = "Informe seu nome:";
+nome.innerHTML = "Informe seu nome:";
 nome.style.paddingTop = "1%";
 nome.style.color = "Teal";
 div.appendChild(nome);
@@ -29,7 +36,7 @@ input1.style.backgroundColor = "white";
 div.appendChild(input1);
 //Título Idade
 const idade = document.createElement("h3");
-idade.textContent = "Informe sua idade:";
+idade.innerHTML = "Informe sua idade:";
 idade.style.paddingTop = "1%";
 idade.style.color = "Teal";
 div.appendChild(idade);
@@ -42,7 +49,7 @@ input2.style.backgroundColor = "white";
 div.appendChild(input2);
 //Título Peso
 const pesoh3 = document.createElement("h3");
-pesoh3.textContent = "Informe seu peso (kg):";
+pesoh3.innerHTML = "Informe seu peso (kg):";
 pesoh3.style.paddingTop = "1%";
 pesoh3.style.color = "Teal";
 div.appendChild(pesoh3);
@@ -55,7 +62,7 @@ input3.style.backgroundColor = "white";
 div.appendChild(input3);
 //Título Altura
 const alturah3 = document.createElement("h3");
-alturah3.textContent = "Informe sua altura (metro e cm):";
+alturah3.innerHTML = "Informe sua altura (metro e cm):";
 alturah3.style.paddingTop = "1%";
 alturah3.style.color = "Teal";
 div.appendChild(alturah3);
@@ -68,7 +75,7 @@ input4.style.backgroundColor = "white";
 div.appendChild(input4);
 //Botão de calcular
 const botao = document.createElement("button"); 
-botao.textContent = "Calcular";
+botao.innerHTML = "Calcular";
 botao.style.color = "white"
 botao.style.padding = "px";
 botao.style.marginTop = "25px";
@@ -109,10 +116,10 @@ botao.addEventListener("click",function(){
         color = "green";
     } else if (imc >= 25.00 && imc < 30.00){
         grau = "SOBREPESO";
-        color = "yellow";
+        color = "Goldenrod";
     } else if (imc >= 30.00 && imc < 40.00){
         grau = "OBESIDADE";
-        color = "orange";
+        color = "OrangeRed";
     } else {
         grau = "OBESIDADE GRAVE";
         color = "red";
@@ -128,8 +135,7 @@ botao.addEventListener("click",function(){
 const div1 = document.createElement("div");
 div1.style.display = "flex";
 div1.style.flexDirection = "column";
-div1.style.marginTop = "5%";
-div1.style.marginLeft = "30%";
+div1.style.margin = "5% 0 5% 30%";
 div1.style.height = "100px";
 div1.style.width = "20%";
 div.appendChild(div1);
@@ -148,3 +154,113 @@ tipo.style.display = "flex";
 tipo.style.justifyContent = "flex-end";
 tipo.style.alignItems = "center";
 tipo.style.height = "40%";
+//Container Situação
+const div2 = document.createElement("div");
+div2.style.display = "flex"
+div2.style.flexDirection = "column";
+div2.style.width = "20%";
+div2.style.border = "solid 2px darkcyan";
+div2.style.borderRight = "none";
+div2.style.margin = "1% 0";
+div2.style.backgroundColor = "whitesmoke";
+div2.style.alignItems = "center";
+div0.appendChild(div2);
+//Situação 
+const info = document.createElement("h1");
+info.innerHTML = "Situação";
+info.style.paddingTop = "2%";
+info.style.color = "DarkCyan";
+div2.appendChild(info);
+//boxes tipo
+const boxes = document.createElement("div");
+boxes.style.width = "100%";
+boxes.style.marginTop = "2%";
+boxes.style.display = "flex";
+boxes.style.flexDirection = "column";
+boxes.style.justifyContent = "space-between";
+div2.appendChild(boxes);
+//box1
+const box1 = document.createElement("div");
+box1.style.display = "flex";
+box1.style.flexDirection = "column";
+box1.style.alignItems = "center";
+boxes.appendChild(box1);
+const box1formato = document.createElement("div");
+box1formato.style.width = "50px";
+box1formato.style.height = "50px";
+box1formato.style.backgroundColor = "blue";
+box1.appendChild(box1formato);
+const box1info = document.createElement("h3");
+box1info.innerHTML = "MAGREZA"
+box1info.style.color = "blue";
+box1.appendChild(box1info);
+//box2
+const box2 = document.createElement("div");
+box2.style.display = "flex";
+box2.style.flexDirection = "column";
+box2.style.alignItems = "center";
+boxes.appendChild(box2);
+const box2formato = document.createElement("div");
+box2formato.style.width = "50px";
+box2formato.style.height = "50px";
+box2formato.style.backgroundColor = "green";
+box2.appendChild(box2formato);
+const box2info = document.createElement("h3");
+box2info.innerHTML = "NORMAL"
+box2info.style.color = "green";
+box2.appendChild(box2info);
+//box3
+const box3 = document.createElement("div");
+box3.style.display = "flex";
+box3.style.flexDirection = "column";
+box3.style.alignItems = "center";
+boxes.appendChild(box3);
+const box3formato = document.createElement("div");
+box3formato.style.width = "50px";
+box3formato.style.height = "50px";
+box3formato.style.backgroundColor = "Goldenrod";
+box3.appendChild(box3formato);
+const box3info = document.createElement("h3");
+box3info.innerHTML = "SOBREPESO"
+box3info.style.color = "Goldenrod";
+box3.appendChild(box3info);
+//box4
+const box4 = document.createElement("div");
+box4.style.display = "flex";
+box4.style.flexDirection = "column";
+box4.style.alignItems = "center";
+boxes.appendChild(box4);
+const box4formato = document.createElement("div");
+box4formato.style.width = "50px";
+box4formato.style.height = "50px";
+box4formato.style.backgroundColor = "OrangeRed";
+box4.appendChild(box4formato);
+const box4info = document.createElement("h3");
+box4info.innerHTML = "OBESIDADE"
+box4info.style.color = "OrangeRed";
+box4.appendChild(box4info);
+//box5
+const box5 = document.createElement("div");
+box5.style.display = "flex";
+box5.style.flexDirection = "column";
+box5.style.alignItems = "center";
+boxes.appendChild(box5);
+const box5formato = document.createElement("div");
+box5formato.style.width = "50px";
+box5formato.style.height = "50px";
+box5formato.style.backgroundColor = "Red";
+box5.appendChild(box5formato);
+const box5info = document.createElement("h3");
+box5info.innerHTML = "OBESIDADE GRAVE"
+box5info.style.color = "Red";
+box5.appendChild(box5info);
+//Container Historico
+const div3 = document.createElement("div");
+div3.style.display = "flex"
+div3.style.flexDirection = "column";
+div3.style.width = "40%";
+div3.style.border = "solid 2px darkcyan";
+div3.style.margin = "1% 1% 1% 0";
+div3.style.backgroundColor = "whitesmoke";
+div3.style.alignItems = "center";
+div0.appendChild(div3);
