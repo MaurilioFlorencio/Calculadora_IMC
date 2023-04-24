@@ -171,7 +171,7 @@ info.innerHTML = "Situação";
 info.style.paddingTop = "2%";
 info.style.color = "DarkCyan";
 div2.appendChild(info);
-//boxes tipo
+//boxes situação
 const boxes = document.createElement("div");
 boxes.style.width = "100%";
 boxes.style.marginTop = "2%";
@@ -264,3 +264,11 @@ div3.style.margin = "1% 1% 1% 0";
 div3.style.backgroundColor = "whitesmoke";
 div3.style.alignItems = "center";
 div0.appendChild(div3);
+//Historico 
+const hist = document.createElement("h1");
+hist.innerHTML = "Histórico";
+hist.style.paddingTop = "2%";   
+hist.style.color = "DarkCyan";
+div3.appendChild(hist);
+//ul Historico
+const ul = document.createElement("ul");
