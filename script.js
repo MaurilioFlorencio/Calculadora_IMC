@@ -22,7 +22,7 @@ calculando.style.paddingTop = "2%";
 calculando.style.color = "DarkCyan";
 div.appendChild(calculando);
 //Título Nome
-const nome = document.createElement("h3");
+const nome = document.createElement("h4");
 nome.innerHTML = "Informe seu nome:";
 nome.style.paddingTop = "1%";
 nome.style.color = "Teal";
@@ -35,7 +35,7 @@ input1.style.height = "4%";
 input1.style.backgroundColor = "white";
 div.appendChild(input1);
 //Título Idade
-const idade = document.createElement("h3");
+const idade = document.createElement("h4");
 idade.innerHTML = "Informe sua idade:";
 idade.style.paddingTop = "1%";
 idade.style.color = "Teal";
@@ -48,11 +48,11 @@ input2.style.height = "4%";
 input2.style.backgroundColor = "white";
 div.appendChild(input2);
 //Título Peso
-const pesoh3 = document.createElement("h3");
-pesoh3.innerHTML = "Informe seu peso (kg):";
-pesoh3.style.paddingTop = "1%";
-pesoh3.style.color = "Teal";
-div.appendChild(pesoh3);
+const pesoh4 = document.createElement("h4");
+pesoh4.innerHTML = "Informe seu peso (kg):";
+pesoh4.style.paddingTop = "1%";
+pesoh4.style.color = "Teal";
+div.appendChild(pesoh4);
 //Input 3
 const input3 = document.createElement("input"); 
 input3.type = "float";
@@ -61,11 +61,11 @@ input3.style.height = "4%";
 input3.style.backgroundColor = "white";
 div.appendChild(input3);
 //Título Altura
-const alturah3 = document.createElement("h3");
-alturah3.innerHTML = "Informe sua altura (metro e cm):";
-alturah3.style.paddingTop = "1%";
-alturah3.style.color = "Teal";
-div.appendChild(alturah3);
+const alturah4 = document.createElement("h4");
+alturah4.innerHTML = "Informe sua altura (metro e cm):";
+alturah4.style.paddingTop = "1%";
+alturah4.style.color = "Teal";
+div.appendChild(alturah4);
 //Input 4
 const input4 = document.createElement("input"); 
 input4.type = "float";
@@ -135,9 +135,10 @@ botao.addEventListener("click",function(){
 const div1 = document.createElement("div");
 div1.style.display = "flex";
 div1.style.flexDirection = "column";
-div1.style.margin = "5% 0 5% 30%";
+div1.style.margin = "2% 0 0 30%";
 div1.style.height = "100px";
 div1.style.width = "20%";
+div1.style.alignItems = "center";
 div.appendChild(div1);
 //Resultado do IMC  
 const resultado = document.createElement("div");
@@ -145,15 +146,15 @@ resultado.style.fontSize = "50px";
 resultado.style.fontWeight = "bold";
 resultado.style.justifyContent = "flex-end";
 resultado.style.display = "flex";
-resultado.style.width = "100%";
 resultado.style.height = "60%";
 //Resultado Grau
 const tipo = document.createElement("div"); 
 tipo.style.fontWeight = "bold";
 tipo.style.display = "flex";
-tipo.style.justifyContent = "flex-end";
+tipo.style.justifyContent = "center";
 tipo.style.alignItems = "center";
 tipo.style.height = "40%";
+tipo.style.width = "154px";
 //Container Situação
 const div2 = document.createElement("div");
 div2.style.display = "flex"
@@ -190,9 +191,10 @@ box1formato.style.width = "50px";
 box1formato.style.height = "50px";
 box1formato.style.backgroundColor = "blue";
 box1.appendChild(box1formato);
-const box1info = document.createElement("h3");
+const box1info = document.createElement("h4");
 box1info.innerHTML = "MAGREZA"
 box1info.style.color = "blue";
+box1info.style.margin = "5% 0";
 box1.appendChild(box1info);
 //box2
 const box2 = document.createElement("div");
@@ -205,9 +207,10 @@ box2formato.style.width = "50px";
 box2formato.style.height = "50px";
 box2formato.style.backgroundColor = "green";
 box2.appendChild(box2formato);
-const box2info = document.createElement("h3");
+const box2info = document.createElement("h4");
 box2info.innerHTML = "NORMAL"
 box2info.style.color = "green";
+box2info.style.margin = "5% 0";
 box2.appendChild(box2info);
 //box3
 const box3 = document.createElement("div");
@@ -220,9 +223,10 @@ box3formato.style.width = "50px";
 box3formato.style.height = "50px";
 box3formato.style.backgroundColor = "Goldenrod";
 box3.appendChild(box3formato);
-const box3info = document.createElement("h3");
+const box3info = document.createElement("h4");
 box3info.innerHTML = "SOBREPESO"
 box3info.style.color = "Goldenrod";
+box3info.style.margin = "5% 0";
 box3.appendChild(box3info);
 //box4
 const box4 = document.createElement("div");
@@ -235,24 +239,28 @@ box4formato.style.width = "50px";
 box4formato.style.height = "50px";
 box4formato.style.backgroundColor = "OrangeRed";
 box4.appendChild(box4formato);
-const box4info = document.createElement("h3");
+const box4info = document.createElement("h4");
 box4info.innerHTML = "OBESIDADE"
 box4info.style.color = "OrangeRed";
+box4info.style.margin = "5% 0";
 box4.appendChild(box4info);
 //box5
 const box5 = document.createElement("div");
 box5.style.display = "flex";
 box5.style.flexDirection = "column";
 box5.style.alignItems = "center";
+box5.style.textAlign = "center";
 boxes.appendChild(box5);
 const box5formato = document.createElement("div");
 box5formato.style.width = "50px";
 box5formato.style.height = "50px";
 box5formato.style.backgroundColor = "Red";
 box5.appendChild(box5formato);
-const box5info = document.createElement("h3");
-box5info.innerHTML = "OBESIDADE GRAVE"
+const box5info = document.createElement("h4");
+box5info.innerHTML = "OBESIDADE GRAVE";
+box5info.style.width = "100%";
 box5info.style.color = "Red";
+box5info.style.margin = "5% 0";
 box5.appendChild(box5info);
 //Container Historico
 const div3 = document.createElement("div");
@@ -270,5 +278,20 @@ hist.innerHTML = "Histórico";
 hist.style.paddingTop = "2%";   
 hist.style.color = "DarkCyan";
 div3.appendChild(hist);
-//ul Historico
+//ul Historico  
 const ul = document.createElement("ul");
+ul.style.padding = "0";
+ul.style.display = "flex";
+ul.style.height = "1%";
+ul.style.width = "100%";
+ul.style.alignItems = "flex-start";
+ul.style.margin = "0";
+ul.style.border = "2px solid black";
+ul.style.width = "90%";
+ul.style.height = "50px";
+ul.style.backgroundColor = "white";
+div3.appendChild(ul);
+//boxes clone
+const box1c = box1.cloneNode(true);
+box1c.style.alignItems = "flex-start";
+ul.appendChild(box1c);
