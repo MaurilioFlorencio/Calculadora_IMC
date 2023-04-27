@@ -22,27 +22,27 @@ calculando.style.paddingTop = "2%";
 calculando.style.color = "DarkCyan";
 div.appendChild(calculando);
 //Título Nome
-const nome = document.createElement("h4");
-nome.innerHTML = "Informe seu nome:";
-nome.style.paddingTop = "1%";
-nome.style.color = "Teal";
-div.appendChild(nome);
+const nomeinput = document.createElement("h4");
+nomeinput.innerHTML = "Informe seu nome:";
+nomeinput.style.paddingTop = "1%";
+nomeinput.style.color = "Teal";
+div.appendChild(nomeinput);
 //Input 1
 const input1 = document.createElement("input"); 
-input1.type = "string";
+input1.type = "text";
 input1.style.width = "50%";
 input1.style.height = "4%"; 
 input1.style.backgroundColor = "white";
 div.appendChild(input1);
 //Título Idade
-const idade = document.createElement("h4");
-idade.innerHTML = "Informe sua idade:";
-idade.style.paddingTop = "1%";
-idade.style.color = "Teal";
-div.appendChild(idade);
+const idadeinput = document.createElement("h4");
+idadeinput.innerHTML = "Informe sua idade:";
+idadeinput.style.paddingTop = "1%";
+idadeinput.style.color = "Teal";
+div.appendChild(idadeinput);
 //Input 2
 const input2 = document.createElement("input"); 
-input2.type = "string";
+input2.type = "text";
 input2.style.width = "50%";
 input2.style.height = "4%";
 input2.style.backgroundColor = "white";
@@ -55,7 +55,7 @@ pesoh4.style.color = "Teal";
 div.appendChild(pesoh4);
 //Input 3
 const input3 = document.createElement("input"); 
-input3.type = "float";
+input3.type = "number";
 input3.style.width = "50%";
 input3.style.height = "4%";
 input3.style.backgroundColor = "white";
@@ -68,7 +68,7 @@ alturah4.style.color = "Teal";
 div.appendChild(alturah4);
 //Input 4
 const input4 = document.createElement("input"); 
-input4.type = "float";
+input4.type = "number";
 input4.style.width = "50%";
 input4.style.height = "4%";
 input4.style.backgroundColor = "white";
@@ -102,9 +102,14 @@ let imc = 0;
 let color = null;
 let grau = null;
 let imcF = null;
+let nome = null;
+let idade = null;
+
 botao.addEventListener("click",function(){
     peso = input3.value;
     altura = input4.value;
+    nome = input1.value;
+    idade = input2.value;
     //Calculando o IMC
     imc = (peso/(altura*altura));
     imcF = imc.toFixed(2);
@@ -130,6 +135,17 @@ botao.addEventListener("click",function(){
     tipo.style.color = color;
     div1.appendChild(resultado);
     div1.appendChild(tipo);
+
+    
+    box1f.style.backgroundColor = color;
+    box1f.innerHTML = imcF;
+    nomeUl.innerHTML = nome;
+    nomeUl.style.color = color;
+
+    ul.appendChild(box1f);
+    ul.appendChild(nomeUl);
+
+    div3.appendChild(ul);
 })
 //Container Resultado
 const div1 = document.createElement("div");
@@ -284,14 +300,20 @@ ul.style.padding = "0";
 ul.style.display = "flex";
 ul.style.height = "1%";
 ul.style.width = "100%";
-ul.style.alignItems = "flex-start";
+ul.style.alignItems = "center";
+ul.style.justifyContent = "flex-start";
 ul.style.margin = "0";
 ul.style.border = "2px solid black";
 ul.style.width = "90%";
 ul.style.height = "50px";
 ul.style.backgroundColor = "white";
-div3.appendChild(ul);
 //boxes clone
-const box1c = box1.cloneNode(true);
-box1c.style.alignItems = "flex-start";
-ul.appendChild(box1c);
+const box1f = box1formato.cloneNode(true);
+box1f.style.display = "grid";
+box1f.style.placeItems = "center"
+box1f.style.color = "white";
+//nome na ul
+const nomeUl = document.createElement("h4");
+nomeUl.style.paddingTop = "1%";
+nomeUl.style.margin = "0 0 0 3%";
+nomeUl.style.padding = "0";
