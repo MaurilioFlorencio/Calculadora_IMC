@@ -134,9 +134,9 @@ botao.addEventListener("click",function(){
     resultado.style.color = color;
     tipo.innerHTML = grau;
     tipo.style.color = color;
+    
     div1.appendChild(resultado);
     div1.appendChild(tipo);
-
     //ul Historico  
     const ul = document.createElement("ul");
     ul.style.padding = "0";
@@ -332,9 +332,25 @@ div0.appendChild(div3);
 //Historico 
 const hist = document.createElement("h1");
 hist.innerHTML = "Histórico";
+hist.style.marginBottom = "0";
 hist.style.paddingTop = "2%";   
 hist.style.color = "DarkCyan";
 div3.appendChild(hist);
+//info da ul
+const infoUl = document.createElement("h4");
+infoUl.style.margin = "2% 0";
+infoUl.innerHTML = "IMC NOME IDADE";
+infoUl.style.paddingTop = "1%";
+infoUl.style.color = "Teal";
+div3.appendChild(infoUl);
+const infoUlC = document.createElement("div");
+infoUlC.style.padding = "0";
+infoUlC.style.margin = "0";
+infoUlC.style.display = "flex";
+infoUlC.style.alignItems = "center";
+infoUlC.style.justifyContent = "space-between";
+div3.appendChild(infoUlC);
+
 
 
 
