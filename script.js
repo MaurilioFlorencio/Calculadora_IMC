@@ -31,7 +31,7 @@ div.appendChild(nomeinput);
 const input1 = document.createElement("input"); 
 input1.type = "text";
 input1.style.width = "50%";
-input1.style.height = "4%"; 
+input1.style.height = "25px";
 input1.style.backgroundColor = "white";
 div.appendChild(input1);
 //Título Idade
@@ -44,7 +44,7 @@ div.appendChild(idadeinput);
 const input2 = document.createElement("input"); 
 input2.type = "text";
 input2.style.width = "50%";
-input2.style.height = "4%";
+input2.style.height = "25px";
 input2.style.backgroundColor = "white";
 div.appendChild(input2);
 //Título Peso
@@ -57,7 +57,7 @@ div.appendChild(pesoh4);
 const input3 = document.createElement("input"); 
 input3.type = "number";
 input3.style.width = "50%";
-input3.style.height = "4%";
+input3.style.height = "25px";
 input3.style.backgroundColor = "white";
 div.appendChild(input3);
 //Título Altura
@@ -70,7 +70,7 @@ div.appendChild(alturah4);
 const input4 = document.createElement("input"); 
 input4.type = "number";
 input4.style.width = "50%";
-input4.style.height = "4%";
+input4.style.height = "25px";
 input4.style.backgroundColor = "white";
 div.appendChild(input4);
 //Botão de calcular
@@ -80,7 +80,7 @@ botao.style.color = "white"
 botao.style.padding = "px";
 botao.style.marginTop = "25px";
 botao.style.width = "15%";
-botao.style.height = "4%";
+botao.style.height = "25px";
 botao.style.border = "none";
 botao.style.backgroundColor = "LightSeaGreen";
 botao.style.textalign =  "center";
@@ -129,6 +129,7 @@ botao.addEventListener("click",function(){
         grau = "OBESIDADE GRAVE";
         color = "red";
     }
+
     resultado.innerHTML = imcF;
     resultado.style.color = color;
     tipo.innerHTML = grau;
@@ -136,14 +137,54 @@ botao.addEventListener("click",function(){
     div1.appendChild(resultado);
     div1.appendChild(tipo);
 
-    
-    box1f.style.backgroundColor = color;
-    box1f.innerHTML = imcF;
+    //ul Historico  
+    const ul = document.createElement("ul");
+    ul.style.padding = "0";
+    ul.style.margin = "0";
+    ul.style.display = "flex";
+    ul.style.alignItems = "center";
+    ul.style.justifyContent = "space-between";
+    ul.style.border = "2px solid black";
+    ul.style.height = "50px";
+    ul.style.width = "90%";
+    //boxes clone
+    const box = box1formato.cloneNode(true);
+    box.style.display = "grid";
+    box.style.placeItems = "center"
+    box.style.color = "white";
+    //nome na ul
+    const nomeUl = document.createElement("h4");
+    nomeUl.style.paddingTop = "1%";
+    nomeUl.style.margin = "0 5%";
+    nomeUl.style.padding = "0";
     nomeUl.innerHTML = nome;
     nomeUl.style.color = color;
+    //idade na ul
+    const idadeUl = box.cloneNode(true);
+    idadeUl.style.display = "flex";
+    idadeUl.style.flexDirection = "column"
+    idadeUl.style.color = "white";
+    idadeUl.style.justifyContent = "center";
 
-    ul.appendChild(box1f);
+    const idadep = document.createElement("p");
+    const anosp = document.createElement("p");
+    
+    box.style.backgroundColor = color;
+    box.innerHTML = imcF;
+    
+    idadep.innerText = idade; 
+    idadep.style.margin = "0";
+    
+    anosp.innerHTML = "anos";
+    anosp.style.margin = "0";
+    
+    idadeUl.style.backgroundColor = color;
+    idadeUl.appendChild(idadep);
+    idadeUl.appendChild(anosp);
+
+    ul.appendChild(box);
     ul.appendChild(nomeUl);
+    ul.appendChild(idadeUl);
 
     div3.appendChild(ul);
 })
@@ -294,26 +335,6 @@ hist.innerHTML = "Histórico";
 hist.style.paddingTop = "2%";   
 hist.style.color = "DarkCyan";
 div3.appendChild(hist);
-//ul Historico  
-const ul = document.createElement("ul");
-ul.style.padding = "0";
-ul.style.display = "flex";
-ul.style.height = "1%";
-ul.style.width = "100%";
-ul.style.alignItems = "center";
-ul.style.justifyContent = "flex-start";
-ul.style.margin = "0";
-ul.style.border = "2px solid black";
-ul.style.width = "90%";
-ul.style.height = "50px";
-ul.style.backgroundColor = "white";
-//boxes clone
-const box1f = box1formato.cloneNode(true);
-box1f.style.display = "grid";
-box1f.style.placeItems = "center"
-box1f.style.color = "white";
-//nome na ul
-const nomeUl = document.createElement("h4");
-nomeUl.style.paddingTop = "1%";
-nomeUl.style.margin = "0 0 0 3%";
-nomeUl.style.padding = "0";
+
+
+
