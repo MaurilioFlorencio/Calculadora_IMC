@@ -106,10 +106,15 @@ let nome = null;
 let idade = null;
 
 botao.addEventListener("click",function(){
-    peso = input3.value;
-    altura = input4.value;
     nome = input1.value;
     idade = input2.value;
+    peso = input3.value;
+    altura = input4.value;
+
+    if (!nome || !idade || !peso || !altura) {
+        return 
+    }
+    
     //Calculando o IMC
     imc = (peso/(altura*altura));
     imcF = imc.toFixed(2);
@@ -129,7 +134,6 @@ botao.addEventListener("click",function(){
         grau = "OBESIDADE GRAVE";
         color = "red";
     }
-
     resultado.innerHTML = imcF;
     resultado.style.color = color;
     tipo.innerHTML = grau;
@@ -337,20 +341,28 @@ hist.style.paddingTop = "2%";
 hist.style.color = "DarkCyan";
 div3.appendChild(hist);
 //info da ul
-const infoUl = document.createElement("h4");
-infoUl.style.margin = "2% 0";
-infoUl.innerHTML = "IMC NOME IDADE";
-infoUl.style.paddingTop = "1%";
-infoUl.style.color = "Teal";
-div3.appendChild(infoUl);
-const infoUlC = document.createElement("div");
-infoUlC.style.padding = "0";
-infoUlC.style.margin = "0";
-infoUlC.style.display = "flex";
-infoUlC.style.alignItems = "center";
-infoUlC.style.justifyContent = "space-between";
-div3.appendChild(infoUlC);
-
-
-
-
+const legendaUl = document.createElement("div");
+legendaUl.style.padding = "0";
+legendaUl.style.margin = "0";
+legendaUl.style.width = "90%";
+legendaUl.style.height = "9%";
+legendaUl.style.display = "flex";
+legendaUl.style.justifyContent = "space-between";
+div3.appendChild(legendaUl);
+const imcLegenda = document.createElement("h4");
+imcLegenda.innerHTML = "IMC";
+imcLegenda.style.padding = "0 2%";
+imcLegenda.style.paddingTop = "1%";
+imcLegenda.style.color = "Teal";
+legendaUl.appendChild(imcLegenda);
+const nomeLegenda = document.createElement("h4");
+nomeLegenda.innerHTML = "NOME";
+nomeLegenda.style.padding = "0 2%";
+nomeLegenda.style.paddingTop = "1%";
+nomeLegenda.style.color = "Teal";
+legendaUl.appendChild(nomeLegenda);
+const idadeLegenda = document.createElement("h4");
+idadeLegenda.innerHTML = "IDADE";
+idadeLegenda.style.paddingTop = "1%";
+idadeLegenda.style.color = "Teal";
+legendaUl.appendChild(idadeLegenda);
